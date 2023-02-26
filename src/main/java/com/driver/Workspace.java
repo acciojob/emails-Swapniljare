@@ -30,10 +30,12 @@ public class Workspace extends Gmail{
                 return o1.getStartTime() == o2.getStartTime() ? o1.getStartTime().compareTo(o2.getStartTime()) : o1.getEndTime().compareTo(o2.getEndTime());
             });
             LocalTime limit = calendar.get(0).getEndTime();
+
             int maxMeeting = 0;
             if(calendar.size() > 0){
                 maxMeeting++;
             }
+
             for (int i = 0; i < calendar.size(); i++){
                 if(calendar.get(i).getStartTime().compareTo(limit) > 0){
                     maxMeeting++;
